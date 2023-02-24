@@ -1,0 +1,23 @@
+<h1>Liste des clubs</h1>
+<table border="2">
+    <tr>
+        <th>ID</th>
+        <th>Réference</th>
+        <th>Created At</th>
+        <th>NSC des étudiants inscris</th>
+        <th>Actions</th>
+    </tr>
+    {% for c in clubs %}
+        <tr>
+            <td>{{ c.id }}</td>
+            <td>{{ c.ref }}</td>
+            <td>{{ c.createdat.format('d/m/Y') }}</td>
+            <td>{% for j in c.students %}
+                {{ j.NSC }}
+                {% endfor %}
+            </td>
+            <td><a href='{{path('modif_club',{'id':c.id})}}'>Modifier</a> <a href='{{path('delete_club',{'id':c.id})}}'>Supprimer</a></td>
+        </tr>
+    {% endfor%}
+</table>
+<a href='{{path('add_club')}}'>Ajouter un club</a>

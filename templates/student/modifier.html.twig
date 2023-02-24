@@ -1,0 +1,13 @@
+<h1>Modifier un etudiant</h1>
+{% block body %}
+    {{ form_start(form) }}
+    {{ form_label(form.NSC) }}
+    {{ form_widget(form.NSC) }}
+    {{ form_label(form.email) }}
+    {{ form_widget(form.email) }}
+    {{ form_label(form.id_classroom) }}
+    {{ form_widget(form.id_classroom) }}
+    {{ form_rest(form) }}
+    <button type="submit">Enregistrer</button>
+    {{ form_end(form) }}
+{% endblock %}

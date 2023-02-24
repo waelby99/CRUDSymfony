@@ -1,0 +1,13 @@
+<h1>Ajouter un club</h1>
+{% block body %}
+    {{ form_start(form) }}
+    {{ form_label(form.ref) }}
+    {{ form_widget(form.ref) }}
+    {{ form_label(form.createdat) }}
+    {{ form_widget(form.createdat) }}
+    {{ form_label(form.students) }}
+    {{ form_widget(form.students) }}
+    {{ form_rest(form) }}
+    <button type="submit">Enregistrer</button>
+    {{ form_end(form) }}
+{% endblock %}

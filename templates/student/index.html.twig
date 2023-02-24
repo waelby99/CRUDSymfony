@@ -1,0 +1,21 @@
+<h1>Liste des étudiants</h1>
+<table border="2">
+    <tr>
+        <th>ID</th>
+        <th>NSC</th>
+        <th>Email</th>
+        <th>Classroom</th>
+        <th>Action</th>
+    </tr>
+    {% for s in students %}
+        <tr>
+            <td>{{ s.id }}</td>
+            <td>{{ s.nsc }}</td>
+            <td> {{ s.email }}</td>
+            <td>{{ s.getIdClassroom.name }}</td>
+            <td><a href='{{path('modif_student',{'id':s.id})}}'>Modifier </a>  <a href='{{path('delete_student',{'id':s.id})}}'>Supprimer</a></td>
+        </tr>
+    {% endfor%}
+</table>
+<a href='{{path('add_student')}}'>Ajouter étudiant</a>
+
